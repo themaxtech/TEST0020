@@ -59,10 +59,12 @@ var app = {
             // here is where you might want to send it the token for later use.
             alert('device token = ' + result);
         }
-        
+
         // Start adding your code here....
         alert("am ready");
         pushNotification = window.plugins.pushNotification; 
+        alert("Device" + device.platform);
+
 
         $("#app-status-ul").append('<li>registering ' + device.platform + '</li>');
         if ( device.platform == 'android' || device.platform == 'Android' || device.platform == "amazon-fireos" ){
