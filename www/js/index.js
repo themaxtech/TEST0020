@@ -43,84 +43,60 @@ var app = {
     
 
     onDeviceReady: function() {
-        console.log("device ready, start making you custom calls!");
+        console.log("device ready, start making you custom calls!"); 
+        alert(" Am ready");
 
-        // result contains any message sent from the plugin call
-        function successHandler (result) {
-            alert('result = ' + result);
-        }
-        // result contains any error description text returned from the plugin call
-        function errorHandler (error) {
-            alert('error = ' + error);
-        }
-
-        function tokenHandler (result) {
-            // Your iOS push server needs to know the token before it can push to this device
-            // here is where you might want to send it the token for later use.
-            alert('device token = ' + result);
-        }
-
-        // Start adding your code here....
-        alert("am ready");
-        pushNotification = window.plugins.pushNotification; 
-        alert("Device" + device.platform);
-
-
-        $("#app-status-ul").append('<li>registering ' + device.platform + '</li>');
-        if ( device.platform == 'android' || device.platform == 'Android' || device.platform == "amazon-fireos" ){
-            pushNotification.register(
-            successHandler,
-            errorHandler,
+        try
             {
-                "senderID":"replace_with_sender_id",
-                "ecb":"onNotification"
-            });
-        } else if ( device.platform == 'blackberry10'){
-            pushNotification.register(
-            successHandler,
-            errorHandler,
-            {
-                invokeTargetId : "replace_with_invoke_target_id",
-                appId: "replace_with_app_id",
-                ppgUrl:"replace_with_ppg_url", //remove for BES pushes
-                ecb: "pushNotificationHandler",
-                simChangeCallback: replace_with_simChange_callback,
-                pushTransportReadyCallback: replace_with_pushTransportReady_callback,
-                launchApplicationOnPush: true
-            });
-        } else {
-            pushNotification.register(
-            tokenHandler,
-            errorHandler,
-            {
-                "badge":"true",
-                "sound":"true",
-                "alert":"true",
-                "ecb":"onNotificationAPN"
-            });
-        }
-
-        
-        pushNotification.setApplicationIconBadgeNumber(successCallback, errorCallback, badgeCount);
-        // iOS
-        function onNotificationAPN (event) {
-            if ( event.alert )
-            {
-                navigator.notification.alert(event.alert);
+                var pushNotification = window.plugins.pushNotification;
+                if (window.device.platform == 'iOS') {
+                    // Register for IOS:
+                    pushNotification.register(
+                        pushSuccessHandler,
+                        pushErrorHandler, {
+                            "badge":"true",
+                            "sound":"true",
+                            "alert":"true",
+                            "ecb":"onNotificationAPNS"
+                        }
+                    );
+                }
             }
-
-            if ( event.sound )
+            catch(err)
             {
-                var snd = new Media(event.sound);
-                snd.play();
+                // For this example, we'll fail silently ...
+                console.log(err);
+                alert("Try Error - " + err);
             }
-
-            if ( event.badge )
+             
+            /**
+             * Success handler for when connected to push server
+             * @param result
+             */
+            var pushSuccessHandler = function(result)
             {
-                pushNotification.setApplicationIconBadgeNumber(successHandler, errorHandler, event.badge);
-            }
-        }
-
+                console.log(result);
+                alert("Success" + result);
+            };
+             
+            /**
+             * Error handler for when not connected to push server
+             * @param error
+             */
+            var pushErrorHandler = function(error)
+            {
+                console.log(error);
+                alert("error" + error);
+            };
+             
+            /**
+             * Notification from Apple APNS
+             * @param e
+             */
+            var onNotificationAPNS = function(e)
+            {
+                // ...
+            };
 
     } 
 
