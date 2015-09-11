@@ -57,7 +57,10 @@
 
 <gap:plugin name="org.apache.cordova.vibration" version="0.3.11" />
 
-  
+
+<gap:plugin name="https://github.com/phonegap-build/PushPlugin.git"/>
+
+ 
    
 
   <icon src="icon.png"/>
@@ -100,13 +103,7 @@
     <allow-intent href="itms:*"/>
     <allow-intent href="itms-apps:*"/>
   </platform> 
-
-  <feature name="PushPlugin">
-  <param name="ios-package" value="PushPlugin" />
-  </feature>
-
-  <key>PushPlugin</key>
-  <string>PushPlugin</string>
+ 
 
 
 </widget>
