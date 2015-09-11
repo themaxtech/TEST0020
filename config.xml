@@ -101,6 +101,8 @@
     <allow-intent href="itms-apps:*"/>
   </platform>
 
+
+
   <feature name="Notification">
     <param name="ios-package" value="CDVNotification" />
   </feature>
@@ -108,6 +110,9 @@
   <feature name="PushPlugin">
   <param name="ios-package" value="PushPlugin" />
   </feature>
+
+  <key>PushPlugin</key>
+  <string>PushPlugin</string>
 
 
 </widget>
