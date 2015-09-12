@@ -19,8 +19,13 @@
 
 var pushNotification;
 try {
+    
+    document.addEventListener("deviceready", function(){
     alert("Welcome guest!");
     pushNotification = window.plugins.pushNotification;
+     
+    });
+    
 }
 catch(err) {
     
