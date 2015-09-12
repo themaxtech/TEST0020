@@ -16,7 +16,41 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-var pushNotification;
+function initPushwoosh() {
+    var pushNotification = cordova.require("com.pushwoosh.plugins.pushwoosh.PushNotification");
+ 
+    //set push notification callback before we initialize the plugin
+    document.addEventListener('push-notification', function(event) {
+                                //get the notification payload
+                                var notification = event.notification;
+ 
+                                //display alert to the user for example
+                                alert(notification.aps.alert);
+                               
+                                //clear the app badge
+                                pushNotification.setApplicationIconBadgeNumber(0);
+                            });
+ 
+    //initialize the plugin
+    pushNotification.onDeviceReady({pw_appid:"PUSHWOOSH_APP_ID"});
+     
+    //register for pushes
+    pushNotification.registerDevice(
+        function(status) {
+            var deviceToken = status['deviceToken'];
+            console.warn('registerDevice: ' + deviceToken);
+            alert('Device Token -->: ' + deviceToken)
+        },
+        function(status) {
+            console.warn('failed to register : ' + JSON.stringify(status));
+            alert(JSON.stringify(['failed to register ', status]));
+        }
+    );
+     
+    //reset badges on app start
+    pushNotification.setApplicationIconBadgeNumber(0);
+}
+
 var app = {
     SOME_CONSTANTS : false,  // some constant
 
@@ -44,60 +78,8 @@ var app = {
 
     onDeviceReady: function() {
         console.log("device ready, start making you custom calls!"); 
-        alert(" Am ready");
-
-        try
-            {
-                var pushNotification = window.plugins.pushNotification;
-                if (window.device.platform == 'iOS') {
-                    // Register for IOS:
-                    pushNotification.register(
-                        pushSuccessHandler,
-                        pushErrorHandler, {
-                            "badge":"true",
-                            "sound":"true",
-                            "alert":"true",
-                            "ecb":"onNotificationAPNS"
-                        }
-                    );
-                }
-            }
-            catch(err)
-            {
-                // For this example, we'll fail silently ...
-                console.log(err);
-                alert("Try Error - " + err);
-            }
-             
-            /**
-             * Success handler for when connected to push server
-             * @param result
-             */
-            var pushSuccessHandler = function(result)
-            {
-                console.log(result);
-                alert("Success" + result);
-            };
-             
-            /**
-             * Error handler for when not connected to push server
-             * @param error
-             */
-            var pushErrorHandler = function(error)
-            {
-                console.log(error);
-                alert("error" + error);
-            };
-             
-            /**
-             * Notification from Apple APNS
-             * @param e
-             */
-            var onNotificationAPNS = function(e)
-            {
-                // ...
-            };
-
+        alert(" Am ready"); 
+        initPushwoosh();
     } 
 
 };
