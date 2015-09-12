@@ -22,6 +22,7 @@
   <preference name="android-installLocation" value="auto"/> 
 
   <gap:plugin name="org.apache.cordova.device" version="0.2.12" />
+  <gap:plugin name="org.apache.cordova.media" version="0.2.13" />
   
   <icon src="icon.png"/>
   <icon src="www/res/icon/android/icon-36-ldpi.png" gap:platform="android" gap:qualifier="ldpi"/>
