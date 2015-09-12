@@ -17,17 +17,8 @@
  * under the License.
  */
 
-var pushNotification;
-try {
-    
-     alert("try");
-    
-}
-catch(err) {
-    
-    //document.getElementById("demo").innerHTML = err.message;
-    alert("Try Error : -- " + err.message)
-}
+ 
+
 
 
 var app = {
@@ -39,27 +30,17 @@ var app = {
         console.log("console log init");
         this.bindEvents();
         this.initFastClick();
-        alert("initialize");
-        var pushNotification = window.plugins.pushNotification;
-
-        pushNotification.register(
-            tokenHandler, 
-            errorHandler, 
-            {
-                'badge':'false',
-                'sound':'false',
-                'alert':'true',
-                'ecb':'onNotificationAPN'
-            }
-        );
-
-        function tokenHandler (result) {
-            console.log('device token: '+ result);
-            alert("Device token is : " + result);
-            // This is a device token you will need later to send a push
-            // Store this to PubNub to make your life easier :-)
+        alert("initialize"); 
+         try {
+            var pushNotification = window.plugins.pushNotification;
+            alert("try");
+            
         }
-
+        catch(err) {
+            
+            //document.getElementById("demo").innerHTML = err.message;
+            alert("Try Error : -- " + err.message)
+        } 
 
     },
     // Bind Event Listeners
@@ -81,21 +62,6 @@ var app = {
     onDeviceReady: function() {
         console.log("device ready, start making you custom calls!"); 
         alert("Am ready"); 
-        
-        pushNotification = window.plugins.pushNotification;
-        alert("Welcome guest!");
-
-        if(device.platform == 'iOS') {
-        //　call the registration function for iOS
-        alert("Am iOS!");
-        } else if (device.platform == 'Android' || device.platform == 'amazon-fireos') {
-            // Android
-             alert("Am Android!");
-        }
-        else{
-
-             alert("Who am I?");
-        }
          
     } 
 
