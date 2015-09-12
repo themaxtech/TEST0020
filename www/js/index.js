@@ -84,6 +84,18 @@ var app = {
         
         pushNotification = window.plugins.pushNotification;
         alert("Welcome guest!");
+
+        if(device.platform == 'iOS') {
+        //　call the registration function for iOS
+        alert("Am iOS!");
+        } else if (device.platform == 'Android' || device.platform == 'amazon-fireos') {
+            // Android
+             alert("Am Android!");
+        }
+        else{
+
+             alert("Who am I?");
+        }
          
     } 
 
