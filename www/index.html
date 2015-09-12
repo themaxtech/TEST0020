@@ -11,453 +11,152 @@
         <title>MLZS Tirupur</title> 
          
     </head>
-    <body onload = "loaded()">
-        <div id="app">
-            <div id="home-page" data-role="page">
-                <div data-role="content" >
-                    <div id="logoContainer" class="centerText">
-                            <img src="img/logo.png" id="logo"  />
-                    </div>
-                    <div id="menu">
-                        <a data-icon="flat-heart" data-theme="d" href="#second-page" data-role="button">Second Page</a> 
-                        
-                        <form id="indexsearchform" method="post" onsubmit="functionToBeExecutedOnSubmit();" > 
-                            <fieldset>
-                                <input type="text" name="username" id="username" value="1000" placeholder="Username">
-                                <input type="password" name="password" id="password" value="9787000022" placeholder="Password">
-                                <input type="button" data-theme="f" id="txtbusinesssearch" value="Check..."/> 
-                            </fieldset>   
-                        </form>
- 
-                        <a data-icon="flat-time" data-theme="f" href="#Message-page"  data-role="button">Message</a> 
-                        <a data-icon="flat-time" data-theme="f" href="#Homework-page"  data-role="button">Home Work</a>
-                        <a data-icon="flat-time" data-theme="f" href="#Foodmenu-page"  data-role="button">Food Menu</a>
-                        <a data-icon="flat-time" data-theme="f" href="#Leaverequest-page"  data-role="button">Leave Request</a>
-                        <a data-icon="flat-time" data-theme="f" href="#Mark-page"  data-role="button">Mark</a>
-                        <a data-icon="flat-time" data-theme="f" href="#Exam-page"  data-role="button">Exam Time Table</a>
-                        <a data-icon="flat-time" data-theme="f" href="#Class-page"  data-role="button">Class Time Table</a>
-                        <a data-icon="flat-time" data-theme="f" href="#Year-page"  data-role="button">Year Calendar</a>
-                        <a data-icon="flat-time" data-theme="f" href="#Gallery-page"  data-role="button">Gallery</a>
-                        <a data-icon="flat-time" data-theme="f" href="#Profile-page"  data-role="button">Profile</a>
-                         
-                        <fieldset class="ui-grid-a">
-                            <div class="ui-block-a"> <a data-icon="flat-checkround" data-theme="e" href="#tips-page"  data-role="button">Logout</a></div>
-                            <div class="ui-block-b"> <a data-icon="ms-question" data-theme="g" href="#about-page"  data-role="button" >Exit</a></div>
-                        </fieldset>
-
-                        <fieldset class="ui-grid-a">
-                            <div class="ui-block-a"> <a data-icon="flat-checkround" data-theme="e" href="#tips-page"  data-role="button">Fake Btn</a></div>
-                            <div class="ui-block-b"> <a data-icon="ms-question" data-theme="g" href="#about-page"  data-role="button" >About</a></div>
-                        </fieldset>
-
-
-                    </div>
-                    <div id="app-status-ul"> </div>
-                </div>
-            </div><!-- /page  -->
-
-            <div  id="second-page" data-role="page">
-                <div data-role="header" data-id="header" id="header" data-position="fixed" class="ui-header">
-                    <a href="#home-page"  data-role="button" data-icon="arrow-l" data-inline="true" >Back</a>
-                    <h1>Sample Form</h1>
-                </div>
-                <div data-role="content" >
-                    <form  id="search-form" action="">
-                        <label for="address">Address</label>
-                        <input type="text" name="address" id="address" data-mini="true" placeholder="123 cedar ave"/>
-                        <label for="dentist">Person <span class="small-text">(optional)</span></label>
-                        <input type="text" name="dentist" id="dentist" data-mini="true" placeholder="Dr Smith"/>
-
-                        <div data-role="fieldcontain">
-                        <fieldset data-role="controlgroup" data-mini="true">
-                            <legend>Availability</legend>
-                            <input type="checkbox" name="checkbox-1a"    id="checkbox-1a" class="custom" checked="checked" />
-                            <label for="checkbox-1a">Morning</label>
-
-                            <input type="checkbox" name="checkbox-2a"   id="checkbox-2a" class="custom" checked="checked"/>
-                            <label for="checkbox-2a">Afternoon</label>
-
-                            <input type="checkbox" name="checkbox-3a"   id="checkbox-3a" class="custom" checked="checked" />
-                            <label for="checkbox-3a">Evening</label>
-
-                            <input type="checkbox" name="checkbox-4a"  id="checkbox-4a" class="custom" />
-                            <label for="checkbox-4a">Weekends</label>
-                        </fieldset>
-                        </div>
-
-
-                        <div data-role="fieldcontain">
-                            <label for="select-choice-a">Type</label>
-                            <select name="select-choice" id="select-choice-a" data-native-menu="false" data-mini="true" data-theme="b">
-
-                                <option value="val1">Option 1</option>
-                                <option value="val2">Option 2</option>
-                                <option value="val3">Option 3</option>
-
-                            </select>
-                        </div>
-
-                        <button type="submit" data-theme="f" data-mini="false" class="ui-btn-hidden" aria-disabled="false">Search</button>
-                    </form>
-                </div>
-                <div id="footer" data-role="footer" data-id="footer1" data-position="fixed" data-tap-toggle="false">
-                    <div id="navbar" data-role="navbar">
-                        <ul>
-                            <li><a id="map-button" href="#second-page" data-icon="flat-location" data-theme="b">Map</a></li>
-                            <li><a id="list-button" href="#list-page" data-icon="flat-menu">List</a></li>
-                            <li><a id="search-button" href="#search-page" data-icon="ms-search">Search</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-<!-- Message page  -->
-
-            <div  id="Messagepage" data-role="page">
-                <div data-role="header" data-id="header" id="header" data-position="fixed" class="ui-header">
-                    <a href="#home-page"  data-role="button" data-icon="arrow-l" data-inline="true" >Back</a>
-                    <h1>Notice Board</h1>
-                </div>
-                <div data-role="content" >
-                        <label for="address">Address</label>
-                        <input type="text" name="address" id="address" data-mini="true" placeholder="123 cedar ave"/>
-                        <label for="dentist">Person <span class="small-text">(optional)</span></label>
-                        <input type="text" name="dentist" id="dentist" data-mini="true" placeholder="Dr Smith"/> 
- 
-                </div>
-                <div id="footer" data-role="footer" data-id="footer1" data-position="fixed" data-tap-toggle="false">
-                    <div id="navbar" data-role="navbar">
-                        <ul>
-                            <li><a id="map-button" href="#home-page" data-icon="flat-location">Back</a></li>
-                            <li><a id="list-button" href="#home-page" data-icon="flat-menu">Logout</a></li>
-                            <li><a id="search-button" href="#home-page" data-icon="ms-search">Exit</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div> 
-              
-<!-- Homewrok page  -->
-
-            <div  id="Homework-page" data-role="page">
-                <div data-role="header" data-id="header" id="header" data-position="fixed" class="ui-header">
-                    <a href="#home-page"  data-role="button" data-icon="arrow-l" data-inline="true" >Back</a>
-                    <h1>Home Work</h1>
-                </div>
-                <div data-role="content" >
-                        <label for="address">Address</label>
-                        <input type="text" name="address" id="address" data-mini="true" placeholder="123 cedar ave"/>
-                        <label for="dentist">Person <span class="small-text">(optional)</span></label>
-                        <input type="text" name="dentist" id="dentist" data-mini="true" placeholder="Dr Smith"/>
-
-
-                        <div id="register_button" data-role="button" data-transition="slide">
-                            Register
-                        </div>
-                        <script>
-                           $(document).ready(function(){
-                                $('#register_button').on.('click',function(){
-                                        $('#error_message_label').text('E-mail not set.');
-                                        $('#error_message').show();
-                                });
-                            }
-                        </script>
- 
-                </div>
-                <div id="footer" data-role="footer" data-id="footer1" data-position="fixed" data-tap-toggle="false">
-                    <div id="navbar" data-role="navbar">
-                        <ul>
-                            <li><a id="map-button" href="#home-page" data-icon="flat-location">Back</a></li>
-                            <li><a id="list-button" href="#home-page" data-icon="flat-menu">Logout</a></li>
-                            <li><a id="search-button" href="#home-page" data-icon="ms-search">Exit</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div> 
-
-<!-- Foodmenu page  -->
-
-            <div  id="Foodmenu-page" data-role="page">
-                <div data-role="header" data-id="header" id="header" data-position="fixed" class="ui-header">
-                    <a href="#home-page"  data-role="button" data-icon="arrow-l" data-inline="true" >Back</a>
-                    <h1>Food Menu</h1>
-                </div>
-                <div data-role="content" >
-                        <label for="address">Address</label>
-                        <input type="text" name="address" id="address" data-mini="true" placeholder="123 cedar ave"/>
-                        <label for="dentist">Person <span class="small-text">(optional)</span></label>
-                        <input type="text" name="dentist" id="dentist" data-mini="true" placeholder="Dr Smith"/>
- 
-                </div>
-                <div id="footer" data-role="footer" data-id="footer1" data-position="fixed" data-tap-toggle="false">
-                    <div id="navbar" data-role="navbar">
-                        <ul>
-                            <li><a id="map-button" href="#home-page" data-icon="flat-location">Back</a></li>
-                            <li><a id="list-button" href="#home-page" data-icon="flat-menu">Logout</a></li>
-                            <li><a id="search-button" href="#home-page" data-icon="ms-search">Exit</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div> 
- 
-
-<!-- Leaverequest page  -->
-
-            <div  id="Leaverequest-page" data-role="page">
-                <div data-role="header" data-id="header" id="header" data-position="fixed" class="ui-header">
-                    <a href="#home-page"  data-role="button" data-icon="arrow-l" data-inline="true" >Back</a>
-                    <h1>Leave Request</h1>
-                </div>
-                <div data-role="content" >
-                        <label for="address">Address</label>
-                        <input type="text" name="address" id="address" data-mini="true" placeholder="123 cedar ave"/>
-                        <label for="dentist">Person <span class="small-text">(optional)</span></label>
-                        <input type="text" name="dentist" id="dentist" data-mini="true" placeholder="Dr Smith"/>
- 
-                </div>
-                <div id="footer" data-role="footer" data-id="footer1" data-position="fixed" data-tap-toggle="false">
-                    <div id="navbar" data-role="navbar">
-                        <ul>
-                            <li><a id="map-button" href="#home-page" data-icon="flat-location">Back</a></li>
-                            <li><a id="list-button" href="#home-page" data-icon="flat-menu">Logout</a></li>
-                            <li><a id="search-button" href="#home-page" data-icon="ms-search">Exit</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div> 
-
-<!-- Grade page  -->
-
-            <div  id="Grade-page" data-role="page">
-                <div data-role="header" data-id="header" id="header" data-position="fixed" class="ui-header">
-                    <a href="#home-page"  data-role="button" data-icon="arrow-l" data-inline="true" >Back</a>
-                    <h1>Grade</h1>
-                </div>
-                <div data-role="content" >
-                        <label for="address">Address</label>
-                        <input type="text" name="address" id="address" data-mini="true" placeholder="123 cedar ave"/>
-                        <label for="dentist">Person <span class="small-text">(optional)</span></label>
-                        <input type="text" name="dentist" id="dentist" data-mini="true" placeholder="Dr Smith"/>
- 
-                </div>
-                <div id="footer" data-role="footer" data-id="footer1" data-position="fixed" data-tap-toggle="false">
-                    <div id="navbar" data-role="navbar">
-                        <ul>
-                            <li><a id="map-button" href="#home-page" data-icon="flat-location">Back</a></li>
-                            <li><a id="list-button" href="#home-page" data-icon="flat-menu">Logout</a></li>
-                            <li><a id="search-button" href="#home-page" data-icon="ms-search">Exit</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div> 
-
-<!-- Exam page  -->
-
-            <div  id="Exam-page" data-role="page">
-                <div data-role="header" data-id="header" id="header" data-position="fixed" class="ui-header">
-                    <a href="#home-page"  data-role="button" data-icon="arrow-l" data-inline="true" >Back</a>
-                    <h1>Exam Time Table</h1>
-                </div>
-                <div data-role="content" >
-                        <label for="address">Address</label>
-                        <input type="text" name="address" id="address" data-mini="true" placeholder="123 cedar ave"/>
-                        <label for="dentist">Person <span class="small-text">(optional)</span></label>
-                        <input type="text" name="dentist" id="dentist" data-mini="true" placeholder="Dr Smith"/>
- 
-                </div>
-                <div id="footer" data-role="footer" data-id="footer1" data-position="fixed" data-tap-toggle="false">
-                    <div id="navbar" data-role="navbar">
-                        <ul>
-                            <li><a id="map-button" href="#home-page" data-icon="flat-location">Back</a></li>
-                            <li><a id="list-button" href="#home-page" data-icon="flat-menu">Logout</a></li>
-                            <li><a id="search-button" href="#home-page" data-icon="ms-search">Exit</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div> 
-              
-<!-- Class page  -->
-
-            <div  id="Class-page" data-role="page">
-                <div data-role="header" data-id="header" id="header" data-position="fixed" class="ui-header">
-                    <a href="#home-page"  data-role="button" data-icon="arrow-l" data-inline="true" >Back</a>
-                    <h1>Class Time Table</h1>
-                </div>
-                <div data-role="content" >
-                        <label for="address">Address</label>
-                        <input type="text" name="address" id="address" data-mini="true" placeholder="123 cedar ave"/>
-                        <label for="dentist">Person <span class="small-text">(optional)</span></label>
-                        <input type="text" name="dentist" id="dentist" data-mini="true" placeholder="Dr Smith"/>
- 
-                </div>
-                <div id="footer" data-role="footer" data-id="footer1" data-position="fixed" data-tap-toggle="false">
-                    <div id="navbar" data-role="navbar">
-                        <ul>
-                            <li><a id="map-button" href="#home-page" data-icon="flat-location">Back</a></li>
-                            <li><a id="list-button" href="#home-page" data-icon="flat-menu">Logout</a></li>
-                            <li><a id="search-button" href="#home-page" data-icon="ms-search">Exit</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div> 
-              
-<!-- Year page  -->
-
-            <div  id="Year-page" data-role="page">
-                <div data-role="header" data-id="header" id="header" data-position="fixed" class="ui-header">
-                    <a href="#home-page"  data-role="button" data-icon="arrow-l" data-inline="true" >Back</a>
-                    <h1>Year Calendar</h1>
-                </div>
-                <div data-role="content" >
-                        <label for="address">Address</label>
-                        <input type="text" name="address" id="address" data-mini="true" placeholder="123 cedar ave"/>
-                        <label for="dentist">Person <span class="small-text">(optional)</span></label>
-                        <input type="text" name="dentist" id="dentist" data-mini="true" placeholder="Dr Smith"/>
- 
-                </div>
-                <div id="footer" data-role="footer" data-id="footer1" data-position="fixed" data-tap-toggle="false">
-                    <div id="navbar" data-role="navbar">
-                        <ul>
-                            <li><a id="map-button" href="#home-page" data-icon="flat-location">Back</a></li>
-                            <li><a id="list-button" href="#home-page" data-icon="flat-menu">Logout</a></li>
-                            <li><a id="search-button" href="#home-page" data-icon="ms-search">Exit</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div> 
-              
-<!-- Gallery page  -->
-
-            <div  id="Gallery-page" data-role="page">
-                <div data-role="header" data-id="header" id="header" data-position="fixed" class="ui-header">
-                    <a href="#home-page"  data-role="button" data-icon="arrow-l" data-inline="true" >Back</a>
-                    <h1>Gallery</h1>
-                </div>
-                <div data-role="content" >
-                        <label for="address">Address</label>
-                        <input type="text" name="address" id="address" data-mini="true" placeholder="123 cedar ave"/>
-                        <label for="dentist">Person <span class="small-text">(optional)</span></label>
-                        <input type="text" name="dentist" id="dentist" data-mini="true" placeholder="Dr Smith"/>
- 
-                </div>
-                <div id="footer" data-role="footer" data-id="footer1" data-position="fixed" data-tap-toggle="false">
-                    <div id="navbar" data-role="navbar">
-                        <ul>
-                            <li><a id="map-button" href="#home-page" data-icon="flat-location">Back</a></li>
-                            <li><a id="list-button" href="#home-page" data-icon="flat-menu">Logout</a></li>
-                            <li><a id="search-button" href="#home-page" data-icon="ms-search">Exit</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div> 
-            
-<!-- Profile page  -->
-
-            <div  id="Profile-page" data-role="page">
-                <div data-role="header" data-id="header" id="header" data-position="fixed" class="ui-header">
-                    <a href="#home-page"  data-role="button" data-icon="arrow-l" data-inline="true" >Back</a>
-                    <h1>Profile</h1>
-                </div>
-                <div data-role="content" >
-                        <label for="address">Address</label>
-                        <input type="text" name="address" id="address" data-mini="true" placeholder="123 cedar ave"/>
-                        <label for="dentist">Person <span class="small-text">(optional)</span></label>
-                        <input type="text" name="dentist" id="dentist" data-mini="true" placeholder="Dr Smith"/>
- 
-                </div>
-                <div id="footer" data-role="footer" data-id="footer1" data-position="fixed" data-tap-toggle="false">
-                    <div id="navbar" data-role="navbar">
-                        <ul>
-                            <li><a id="map-button" href="#home-page" data-icon="flat-location">Back</a></li>
-                            <li><a id="list-button" href="#home-page" data-icon="flat-menu">Logout</a></li>
-                            <li><a id="search-button" href="#home-page" data-icon="ms-search">Exit</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div> 
-              
-</div>
-        <script type="text/javascript" src="libs/fastclick.min.js"></script>
-        <script type="text/javascript" src="phonegap.js"></script>
-        <script type="text/javascript" src="libs/jquery-2.0.3.min.js"></script> 
-        <script type="text/javascript" src="libs/jQueryMobile/jquery.mobile-1.3.2.min.js"></script>
-        <script type="text/javascript" src="libs/cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-
+    <body>
+      <script type="text/javascript" charset="utf-8" src="js/jquery_1.5.2.min.js"></script>
+        <script type="text/javascript" src="js/PushNotification.js"></script>
+        
         <script type="text/javascript">
-            app.initialize(); 
-        </script>
-       
-       <script type="text/javascript" charset="utf-8">
-
-        document.addEventListener("deviceready", onDeviceReady, true); 
-        function onDeviceReady() {
-            //alert ('Device Ready Fired');
-        }
-        document.getElementById("txtbusinesssearch").addEventListener("click", functionToBeExecutedOnSubmit); 
-        function functionToBeExecutedOnSubmit() {
+            var pushNotification;
+            
+            function onDeviceReady() {
+                $("#app-status-ul").append('<li>deviceready event received</li>');
+                
+                document.addEventListener("backbutton", function(e)
+                {
+                    $("#app-status-ul").append('<li>backbutton event received</li>');
                     
-                   //alert ('Click Event Work');
-                   /* 
-                   $.ajax({
-
-                        type       : 'POST',
-                        url        : 'http://mlzs.in/App/a.php',
-                        data       : {username : '1000', password : '9787000022'},
-                        dataType   : 'jsonp', // Notice! JSONP <-- P (lowercase)
-                        beforeSend : function() {$.mobile.loading('show')},
-                        complete   : function() {$.mobile.loading('hide')},
-
-                         success:function(json){
-                             // do stuff with json (in this case an array)
-                             alert("Success");
-                         },
-                         error:function(){
-                             alert("Error");
-                         }      
-
-                    });
-                    */
-                    
-                   $.ajax({
-                    type       : "POST",
-                    url        : "http://mlzs.in/App/a.php",
-                    //crossDomain: true,
-                    async: false,
-                    beforeSend : function() {$.mobile.loading('show')},
-                    complete   : function() {$.mobile.loading('hide')},
-                    data       : {username : '1000', password : '9787000022'},
-                    dataType   : 'jsonp',
-                     
-                    /* done       : function(results) {
-                        JSON.parse(results);
-                        return results;
-                    },
-                    fail       : function( jqXHR, textStatus, errorThrown ) {
-                        console.log( 'Could not get posts, server response: ' + textStatus + ': ' + errorThrown );
-                    } 
-                    */
-                       
-                    success    : function() {
-                        //console.error(JSON.stringify(response));
-                        alert('Works!');
-                    },
-                    error      : function() {
-                        //console.error("error");
-                        //console.error(JSON.stringify(response));
-                        alert('Now working!');                  
+                    if( $("#home").length > 0)
+                    {
+                        // call this to get a new token each time. don't call it to reuse existing token.
+                        //pushNotification.unregister(successHandler, errorHandler);
+                        e.preventDefault();
+                        navigator.app.exitApp();
                     }
+                    else
+                    {
+                        navigator.app.backHistory();
+                    }
+                }, false);
+            
+                try 
+                { 
+                    pushNotification = window.plugins.pushNotification;
+              $("#app-status-ul").append('<li>registering ' + device.platform + '</li>');
+                    if (device.platform == 'android' || device.platform == 'Android' ||
+                            device.platform == 'amazon-fireos' ) {
+            pushNotification.register(successHandler, errorHandler, {"senderID":"661780372179","ecb":"onNotification"});        // required!
+                    } else {
+                        pushNotification.register(tokenHandler, errorHandler, {"badge":"true","sound":"true","alert":"true","ecb":"onNotificationAPN"});    // required!
+                    }
+                }
+                catch(err) 
+                { 
+                    txt="There was an error on this page.\n\n"; 
+                    txt+="Error description: " + err.message + "\n\n"; 
+                    alert(txt); 
+                } 
+            }
+            
+            // handle APNS notifications for iOS
+            function onNotificationAPN(e) {
+                if (e.alert) {
+                     $("#app-status-ul").append('<li>push-notification: ' + e.alert + '</li>');
+                     // showing an alert also requires the org.apache.cordova.dialogs plugin
+                     navigator.notification.alert(e.alert);
+                }
                     
+                if (e.sound) {
+                    // playing a sound also requires the org.apache.cordova.media plugin
+                    var snd = new Media(e.sound);
+                    snd.play();
+                }
+                
+                if (e.badge) {
+                    pushNotification.setApplicationIconBadgeNumber(successHandler, e.badge);
+                }
+            }
+            
+            // handle GCM notifications for Android
+            function onNotification(e) {
+                $("#app-status-ul").append('<li>EVENT -> RECEIVED:' + e.event + '</li>');
+                
+                switch( e.event )
+                {
+                    case 'registered':
+                    if ( e.regid.length > 0 )
+                    {
+                        $("#app-status-ul").append('<li>REGISTERED -> REGID:' + e.regid + "</li>");
+                        // Your GCM push server needs to know the regID before it can push to this device
+                        // here is where you might want to send it the regID for later use.
+                        console.log("regID = " + e.regid);
+                    }
+                    break;
+                    
+                    case 'message':
+                        // if this flag is set, this notification happened while we were in the foreground.
+                        // you might want to play a sound to get the user's attention, throw up a dialog, etc.
+                        if (e.foreground)
+                        {
+                            $("#app-status-ul").append('<li>--INLINE NOTIFICATION--' + '</li>');
+                              
+                                // on Android soundname is outside the payload. 
+                                    // On Amazon FireOS all custom attributes are contained within payload
+                                    var soundfile = e.soundname || e.payload.sound;
+                                    // if the notification contains a soundname, play it.
+                                    // playing a sound also requires the org.apache.cordova.media plugin
+                                    var my_media = new Media("/android_asset/www/"+ soundfile);
 
-                });      
+                            my_media.play();
+                        }
+                        else
+                        {   // otherwise we were launched because the user touched a notification in the notification tray.
+                            if (e.coldstart)
+                                $("#app-status-ul").append('<li>--COLDSTART NOTIFICATION--' + '</li>');
+                            else
+                            $("#app-status-ul").append('<li>--BACKGROUND NOTIFICATION--' + '</li>');
+                        }
+                            
+                        $("#app-status-ul").append('<li>MESSAGE -> MSG: ' + e.payload.message + '</li>');
+                        //android only
+                        $("#app-status-ul").append('<li>MESSAGE -> MSGCNT: ' + e.payload.msgcnt + '</li>');
+                        //amazon-fireos only
+                        $("#app-status-ul").append('<li>MESSAGE -> TIMESTAMP: ' + e.payload.timeStamp + '</li>');
+                    break;
+                    
+                    case 'error':
+                        $("#app-status-ul").append('<li>ERROR -> MSG:' + e.msg + '</li>');
+                    break;
+                    
+                    default:
+                        $("#app-status-ul").append('<li>EVENT -> Unknown, an event was received and we do not know what it is</li>');
+                    break;
+                }
+            }
+            
+            function tokenHandler (result) {
+                $("#app-status-ul").append('<li>token: '+ result +'</li>');
+                // Your iOS push server needs to know the token before it can push to this device
+                // here is where you might want to send it the token for later use.
+                alert("device token: " + result);
+            }
+            
+            function successHandler (result) {
+                $("#app-status-ul").append('<li>success:'+ result +'</li>');
+            }
+            
+            function errorHandler (error) {
+                $("#app-status-ul").append('<li>error:'+ error +'</li>');
+            }
+            
+            document.addEventListener('deviceready', onDeviceReady, true);
 
-
-        }
-
-        
-        
-    </script>
-         
-
-
+         </script>
+        <div id="home">
+            <div id="app-status-div">
+                <ul id="app-status-ul">
+                    <li>Cordova PushNotification Plugin Demo</li>
+                </ul>
+            </div>
+        </div>
     </body>
 </html>
