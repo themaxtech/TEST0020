@@ -21,8 +21,9 @@
   <preference name="android-minSdkVersion" value="7"/>
   <preference name="android-installLocation" value="auto"/> 
 
-   <gap:plugin name="com.misiva.plugins.pushwoosh.beacons" version="3.4.5" />
-   <access origin="*.pushwoosh.com" />
+  <gap:plugin name="org.apache.cordova.device" version="0.2.12" />
+  <gap:plugin name="com.misiva.plugins.pushwoosh.beacons" version="3.4.5" />
+  <access origin="*.pushwoosh.com" />
 
 
 
