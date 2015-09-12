@@ -17,7 +17,18 @@
  * under the License.
  */
 
- 
+var pushNotification;
+try {
+    adddlert("Welcome guest!");
+    pushNotification = window.plugins.pushNotification;
+}
+catch(err) {
+    
+    //document.getElementById("demo").innerHTML = err.message;
+    alert("Try Error : -- " + err.message)
+}
+
+
 var app = {
     SOME_CONSTANTS : false,  // some constant
 
