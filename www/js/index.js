@@ -39,7 +39,7 @@ function initPushwoosh() {
         function(status) {
             var deviceToken = status['deviceToken'];
             console.warn('registerDevice: ' + deviceToken);
-            alert('Device Token -->: ' + deviceToken)
+            alert('Device Token -->: ' + deviceToken);
         },
         function(status) {
             console.warn('failed to register : ' + JSON.stringify(status));
@@ -67,6 +67,11 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
+        document.addEventListener('push-notification', function(event) {
+             var notification = event.notification;
+             alert(notification.aps.alert);
+             pushNotification.setApplicationIconBadgeNumber(0);
+        });
     },
     initFastClick : function() {
         window.addEventListener('load', function() {
