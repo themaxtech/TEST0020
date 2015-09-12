@@ -39,6 +39,28 @@ var app = {
         console.log("console log init");
         this.bindEvents();
         this.initFastClick();
+        alert("initialize");
+        var pushNotification = window.plugins.pushNotification;
+
+        pushNotification.register(
+            tokenHandler, 
+            errorHandler, 
+            {
+                'badge':'false',
+                'sound':'false',
+                'alert':'true',
+                'ecb':'onNotificationAPN'
+            }
+        );
+
+        function tokenHandler (result) {
+            console.log('device token: '+ result);
+            alert("Device token is : " + result);
+            // This is a device token you will need later to send a push
+            // Store this to PubNub to make your life easier :-)
+        }
+
+
     },
     // Bind Event Listeners
     //
@@ -59,9 +81,9 @@ var app = {
     onDeviceReady: function() {
         console.log("device ready, start making you custom calls!"); 
         alert("Am ready"); 
-        alert("Welcome guest!");
+        
         pushNotification = window.plugins.pushNotification;
-    
+        alert("Welcome guest!");
          
     } 
 
