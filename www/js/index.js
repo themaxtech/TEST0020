@@ -20,11 +20,7 @@
 var pushNotification;
 try {
     
-    document.addEventListener("deviceready", function(){
-    alert("Welcome guest!");
-    pushNotification = window.plugins.pushNotification;
-     
-    });
+     alert("try");
     
 }
 catch(err) {
@@ -63,6 +59,9 @@ var app = {
     onDeviceReady: function() {
         console.log("device ready, start making you custom calls!"); 
         alert("Am ready"); 
+        alert("Welcome guest!");
+        pushNotification = window.plugins.pushNotification;
+    
          
     } 
 
