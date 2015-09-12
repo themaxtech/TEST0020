@@ -17,9 +17,7 @@
  * under the License.
  */
 
-var pushNotification;
-pushNotification = window.plugins.pushNotification;
-
+ 
 var app = {
     SOME_CONSTANTS : false,  // some constant
 
