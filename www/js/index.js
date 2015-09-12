@@ -19,7 +19,7 @@
 
 var pushNotification;
 try {
-    adddlert("Welcome guest!");
+    alert("Welcome guest!");
     pushNotification = window.plugins.pushNotification;
 }
 catch(err) {
