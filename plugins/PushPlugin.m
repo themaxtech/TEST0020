@@ -124,10 +124,36 @@
         [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
         [[UIApplication sharedApplication] registerForRemoteNotifications];
     } else {
-    		[[UIApplication sharedApplication] registerForRemoteNotificationTypes:notificationTypes];
+    		//[[UIApplication sharedApplication] registerForRemoteNotificationTypes:notificationTypes];
+            if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
+            {
+
+                UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge) categories:nil];
+                [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
+                [[UIApplication sharedApplication] registerForRemoteNotifications];
+
+            }
+            else
+            {
+                [[UIApplication sharedApplication] registerForRemoteNotificationTypes:
+                 (UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert)];
+            }
     }
 #else
-		[[UIApplication sharedApplication] registerForRemoteNotificationTypes:notificationTypes];
+		//[[UIApplication sharedApplication] registerForRemoteNotificationTypes:notificationTypes];
+        if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
+            {
+
+                UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge) categories:nil];
+                [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
+                [[UIApplication sharedApplication] registerForRemoteNotifications];
+
+            }
+            else
+            {
+                [[UIApplication sharedApplication] registerForRemoteNotificationTypes:
+                 (UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert)];
+            }
 #endif
 
 	if (notificationMessage)			// if there is a pending startup notification
