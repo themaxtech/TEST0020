@@ -117,7 +117,7 @@ var app = {
 $(document).on('pagecontainershow', function (e, ui) {
     var activePage = $(':mobile-pagecontainer').pagecontainer('getActivePage');
     if(activePage.attr('id') === 'login') {  
-        
+        app();
         $(document).on('click', '#submit', function() { // catch the form's submit event
             if($('#username').val().length > 0 && $('#password').val().length > 0){
              
