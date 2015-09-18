@@ -22,7 +22,8 @@
     userclass   : '',
     usersec     : '',
     useroriname : '',
-    status      : ''
+    status      : '',
+    appid       : ''
 }
 
 var app = {
@@ -67,7 +68,9 @@ var app = {
     },
     // result contains any message sent from the plugin call
     successHandler: function(result) {
-        alert('Callback Success! Result = '+result)
+        appid = result;
+        alert('Callback Success! Result = '+result);
+
     },
     errorHandler:function(error) {
         alert(error);
@@ -129,7 +132,7 @@ $(document).on('pagecontainershow', function (e, ui) {
                 
                     $.ajax({url: 'http://themaxtech.com/app/auth.php',
                     //$.ajax({url: 'auth.php',
-                    data: {action : 'authorization', formData : $('#check-user').serialize()},
+                    data: {action : 'authorization', deviceid: userHandler.appid, formData : $('#check-user').serialize()},
                     type: 'post',                  
                     async: 'true',
                     dataType: 'json',
