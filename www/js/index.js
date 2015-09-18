@@ -68,7 +68,7 @@ var app = {
     },
     // result contains any message sent from the plugin call
     successHandler: function(result) {
-        appid = result;
+        userHandler.appid = result;
         alert('Callback Success! Result = '+result);
 
     },
